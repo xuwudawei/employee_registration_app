@@ -12,10 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'mainscreen',
-    loadChildren: () => import('./mainscreen/mainscreen.module').then( m => m.MainscreenPageModule)
-  },
-  {
     path: 'loginscreen',
     loadChildren: () => import('./loginscreen/loginscreen.module').then( m => m.LoginscreenPageModule)
   },
