@@ -19,6 +19,12 @@ const routes: Routes = [
     path: 'signupscreen',
     loadChildren: () => import('./signupscreen/signupscreen.module').then( m => m.SignupscreenPageModule)
   },
+
+  {
+    path: 'landing',
+    loadChildren: () => import('./landing-page/landing-page.module').then( m => m.LandingPagePageModule)
+  },
+
 ];
 
 @NgModule({
