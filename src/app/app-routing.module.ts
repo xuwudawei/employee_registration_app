@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'loginscreen',
+    redirectTo: 'landingPage',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'signupscreen',
     loadChildren: () => import('./signupscreen/signupscreen.module').then( m => m.SignupscreenPageModule)
+  },
+  {
+    path: 'employee',
+    loadChildren: () => import('./employee/employee.module').then( m => m.EmployeePageModule)
   },
 ];
 

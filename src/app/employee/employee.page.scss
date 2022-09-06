@@ -1,0 +1,71 @@
+.back-container{
+  height: 400px;
+  z-index: -1;
+}
+
+.top{
+  background-color: #ee4659;
+  height: 40% ;
+}
+.bottom{
+  background-color: #ffffff;
+  height: 60%;
+  vertical-align: bottom;
+  text-align: right;
+  position: relative;
+}
+
+.ending-date{
+  font-size: 10px;
+}
+.portfolio-link{
+  color: cadetblue;
+  text-decoration: none;
+}
+
+.bottom-card-info{
+  right: 10px;
+  position: absolute;
+  bottom: 0px;
+
+}
+
+.front-container{
+  height: 400px;
+  position: absolute;
+  top: 40px;
+  left: 35px;
+}
+
+.lpuLogo{
+  width: 15%;
+}
+
+.general-text-bright {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.general-text-dark{
+  margin-top: 10px;
+  font-size: 15px;
+  color: cadetblue;
+}
+
+
+.general-text-dark-small{
+  font-size: 9px;
+  width:130px;;
+}
+
+
+
+.employee-image {
+    width: 110px;
+    height: 110px;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 4px solid #ee4659;
+
+}
