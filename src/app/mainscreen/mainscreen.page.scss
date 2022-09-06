@@ -1,0 +1,58 @@
+ion-content{
+    --ion-background-color: #fff;
+}
+
+.bg-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: url('../../assets/backgroundmy.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ion-card{
+    text-align: center;
+    
+    .mylogo{
+        margin-top: 30px;
+        height: 8rem;
+        width: 8.2rem;
+    }
+
+    ion-card-title{
+        font-size: 20px;
+        color: #42855B;
+        font-weight: 600;
+    }
+
+    ion-card-content{
+        margin-top: 20px;
+
+        ion-button{
+            width: 180px;
+            height: 60px;
+            --border-radius:40px;
+            --background: #42855B;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            text-transform: none;
+        }
+
+    }
+}
+
+// @media screen and (min-width: 500px){
+//     .bg-filter{
+//         height: 100%;
+//         width: 100%;
+//         background: black;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//     }
+// }

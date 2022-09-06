@@ -1,0 +1,7 @@
+{
+  "name": "frutify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
