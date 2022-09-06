@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/landing" slot="start"></ion-back-button>
+    <ion-title class="ion-text-center">List of Employees</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="12" [sizeSm]="6">
+        <ion-card>
+          <div class="ion-padding">
+            <div class="back-container">
+              <div class="top"></div>
+              <div class="bottom">
+                <div class="bottom-card-info">
+                  <h5 class="ending-date">Ending Date: 08/08/2032</h5>
+                  <h5 class="ending-date">
+                    Copyright @
+                    <span
+                      ><a
+                        class="portfolio-link"
+                        href="https://kingdavid.engineer/"
+                        >kingdavid.engineer</a
+                      ></span
+                    >
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="front-container">
+              <div class="front-content">
+                <img
+                  src="../../../assets/images/lpu.png"
+                  alt="lpu logo"
+                  class="lpuLogo"
+                />
+                <h4 class="general-text-bright">
+                  Lovely Professional University
+                </h4>
+                <img
+                  class="employee-image"
+                  src="../../../assets/images/avatar.png"
+                  alt=""
+                />
+                <h4 class="general-text-dark">David Osei Opoku</h4>
+                <p class="general-text-dark-small">
+                  Bachelor of Technology in Computer Science and Engineering
+                </p>
+                <p class="general-text-dark">
+                  <strong>Senior Software Engineer</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div >
+          <img [src]="'https://images.pexels.com/photos/'+ person.image" alt="employee image">
+        </div>
+        <div class="ion-text-center">
+          <p>{{person.firstName}}</p>
+        </div> -->
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
