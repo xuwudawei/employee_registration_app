@@ -8,14 +8,14 @@
 <ion-content class="ion-padding">
   <ion-grid>
     <ion-row>
-      <ion-col sizeLg="4" sizeMd="4" sizeXs="12" [sizeSm]="6">
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="12" [sizeSm]="6" *ngFor="let employee of employeeList">
         <ion-card>
           <div class="ion-padding">
             <div class="back-container">
               <div class="top"></div>
               <div class="bottom">
                 <div class="bottom-card-info">
-                  <h5 class="ending-date">Ending Date: 08/08/2032</h5>
+                  <h5 class="ending-date">UID: {{employee.uid}}</h5>
                   <h5 class="ending-date">
                     Copyright @
                     <span
@@ -44,12 +44,12 @@
                   src="../../../assets/images/avatar.png"
                   alt=""
                 />
-                <h4 class="general-text-dark">David Osei Opoku</h4>
-                <p class="general-text-dark-small">
+                <h4 class="general-text-dark">{{employee.name}}</h4>
+                <!-- <p class="general-text-dark-small">
                   Bachelor of Technology in Computer Science and Engineering
-                </p>
+                </p> -->
                 <p class="general-text-dark">
-                  <strong>Senior Software Engineer</strong>
+                  <strong>{{employee.designation}}</strong>
                 </p>
               </div>
             </div>

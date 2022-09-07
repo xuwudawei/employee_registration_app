@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { Employee } from '../interface/employee';
+import { AddEmployeeService } from '../service/addEmployee/add-employee.service';
+import { GetEmployeesService } from '../service/getEmployees/get-employees.service';
+import { LoadingService } from '../service/loading/loading.service';
+import { ToastService } from '../service/toast/toast.service';
 
 @Component({
   selector: 'app-add-employee-page',
@@ -8,7 +13,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./add-employee-page.page.scss'],
 })
 export class AddEmployeePagePage implements OnInit {
-    addNewEmployeeForm: FormGroup = this.addNewEmployeeFormBuilder.group({
+  addNewEmployeeForm: FormGroup = this.addNewEmployeeFormBuilder.group({
     name: [
       '',
       [Validators.required, Validators.minLength(2), Validators.maxLength(20)],
@@ -33,9 +38,30 @@ export class AddEmployeePagePage implements OnInit {
 
   constructor(
     public modalCtrl: ModalController,
-    public addNewEmployeeFormBuilder: FormBuilder
+    public addNewEmployeeFormBuilder: FormBuilder,
+    private addEmployeesService: AddEmployeeService,
+    private loadingService: LoadingService,
+    private toastService: ToastService
   ) {}
 
-  ngOnInit() { }
-  submitEmployeeForm(){}
+  ngOnInit() {}
+  submitEmployeeForm() {
+    if (!this.addNewEmployeeForm.valid) {
+      return;
+    }
+    const employee: Employee = {
+      name: this.addNewEmployeeForm.value.name,
+      uid: this.addNewEmployeeForm.value.uid,
+      email: this.addNewEmployeeForm.value.email,
+      phone: this.addNewEmployeeForm.value.phone,
+      designation: this.addNewEmployeeForm.value.designation,
+    };
+
+    this.addEmployeesService.addEmployee(employee).subscribe((res) => {
+      this.loadingService.dismissLoading();
+      console.log(res);
+      this.addNewEmployeeForm.reset();
+      this.toastService.presentToast('Employee Added Successfully!', false);
+    });
+  }
 }
