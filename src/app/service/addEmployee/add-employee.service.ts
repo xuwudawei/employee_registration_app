@@ -30,6 +30,7 @@ export class AddEmployeeService {
           errorMessage = `Error: ${error.error.message}`;
         } else {
           // server-side error
+          console.log(error);
           errorMessage = this.getServerErrorMessage(error);
         }
         this.loadingService.dismissLoading();
@@ -51,15 +52,15 @@ export class AddEmployeeService {
       case 401:
         return error.error.message;
       case 403:
-        return `Access Denied: ${error.message}`;
+        return `Access Denied: ${error.error.message}`;
       case 404:
         return error.error.message;
       case 409:
         return `${error.error.message}`;
       case 500:
-        return `Internal Server Error: ${error.message}`;
+        return `Internal Server Error: ${error.error.message}`;
       default:
-        return `Unknown Server Error: ${error.message}`;
+        return `Unknown Server Error: ${error.error.message}`;
     }
   }
 }

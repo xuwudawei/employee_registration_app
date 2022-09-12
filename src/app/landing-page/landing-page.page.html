@@ -1,29 +1,13 @@
-<ion-header>
-
-</ion-header>
-
 <ion-content>
-  <div class="bg-pic">
-    <div class="bg-filter">
-
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>
-            <b>Welcome!</b>
-          </ion-card-title>
-
-          <ion-card-title>
-        Please Select an Action
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <div class="bottom-section">
-            <ion-button [routerLink]="['/add-employee-page']">Add Employee Details</ion-button>
-            <ion-button [routerLink]="['/employee']">Get Details</ion-button>
-
-          </div>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Welcome To</ion-card-title>
+      <ion-card-subtitle>Employee Management System</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button color="warning" [routerLink]="['/add-employee-page']">Add Employee Details</ion-button>
+      <ion-button color="warning" [routerLink]="['/employee']">Get Details</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+    

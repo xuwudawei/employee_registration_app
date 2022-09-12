@@ -32,8 +32,6 @@ export class EmployeePage implements OnInit {
       });
 
       this.employeeList = res['data'];
-      // console.log(this.employeeList);
-      // this.navCtrl.navigateRoot('/welcome');
     });
   }
 }

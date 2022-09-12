@@ -1,131 +1,132 @@
 <ion-header>
   <ion-toolbar>
     <ion-back-button defaultHref="/landing" slot="start"></ion-back-button>
-    <ion-title class="ion-text-center">Add A New Employee</ion-title>
+    <ion-title class="ion-text-center">New Employee Form</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="bg-pic">
-    <div class="bg-filter">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title> Welcome! </ion-card-title>
-          <ion-card-subtitle>
-            Enter your details,<a href="">Let's Get Started</a>
-          </ion-card-subtitle>
-        </ion-card-header>
-        <form
-          [formGroup]="addNewEmployeeForm"
-          (ngSubmit)="submitEmployeeForm()"
-          novalidate
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Welcome</ion-card-title>
+      <ion-card-subtitle>
+        Enter your details,<a href="">Let's Get Started</a>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <form
+      [formGroup]="addNewEmployeeForm"
+      (ngSubmit)="submitEmployeeForm()"
+      novalidate
+    >
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-input
+            formControlName="name"
+            required="true"
+            placeholder="Employee Name: "
+            type="text"
+          ></ion-input>
+        </ion-item>
+        <span
+          class="error"
+          *ngIf="this.addNewEmployeeForm.get('name').invalid && this.addNewEmployeeForm.get('name').dirty "
+          slot="none"
         >
-          <ion-card-content>
-            <ion-item>
-              <ion-input
-                formControlName="name"
-                required="true"
-                placeholder="Employee Name: "
-                type="text"
-              ></ion-input>
-            </ion-item>
-            <span
-              class="error"
-              *ngIf="this.addNewEmployeeForm.get('name').invalid && this.addNewEmployeeForm.get('name').dirty "
-              slot="none"
-            >
-              <ion-text color="danger">
-                Name should be more than 2 characters.</ion-text
-              >
-            </span>
+          <ion-text color="danger">
+            Name should be more than 2 characters.</ion-text
+          >
+        </span>
 
-            <ion-item>
-              <ion-input
-                formControlName="uid"
-                required="true"
-                placeholder="Employee UID: "
-                type="number"
-              ></ion-input>
-            </ion-item>
-            <span
-              class="error"
-              *ngIf="this.addNewEmployeeForm.get('uid').invalid && this.addNewEmployeeForm.get('uid').dirty "
-              slot="none"
-            >
-              <ion-text color="danger">
-                UID is required.</ion-text
-              >
-            </span>
+        <ion-item lines="none">
+          <ion-icon name="bag-check-outline"></ion-icon>
+          <ion-input
+            formControlName="uid"
+            required="true"
+            placeholder="Employee UID: "
+            type="number"
+          ></ion-input>
+        </ion-item>
+        <span
+          class="error"
+          *ngIf="this.addNewEmployeeForm.get('uid').invalid && this.addNewEmployeeForm.get('uid').dirty "
+          slot="none"
+        >
+          <ion-text color="danger">
+            UID is required.</ion-text
+          >
+        </span>
 
-            <ion-item>
-              <ion-input
-                formControlName="email"
-                required="true"
-                placeholder="Email: "
-                type="email"
-              ></ion-input>
-            </ion-item>
-            <span
-              class="error"
-              *ngIf="this.addNewEmployeeForm.get('email').invalid && this.addNewEmployeeForm.get('email').dirty "
-              slot="none"
-            >
-              <ion-text color="danger">
-                Please enter a valid email accordingly.</ion-text
-              >
-            </span>
-            <ion-item>
-              <ion-input
-                formControlName="phone"
-                required="true"
-                minlength="10"
-                maxlength="10"
-                placeholder="Phone Number: "
-                type="number"
-              ></ion-input>
-            </ion-item>
-            <span
-              class="error"
-              *ngIf="this.addNewEmployeeForm.get('phone').invalid && this.addNewEmployeeForm.get('phone').dirty "
-              slot="none"
-            >
-              <ion-text color="danger">
-                Please enter a correct phone number.</ion-text
-              >
-            </span>
-            <ion-item>
-              <ion-input
-                formControlName="designation"
-                required="true"
-                placeholder="Designation: "
-                type="text"
-              ></ion-input>
-            </ion-item>
-            <span
-              class=""
-              *ngIf="this.addNewEmployeeForm.get('designation').invalid && this.addNewEmployeeForm.get('designation').dirty "
-              slot="none"
-            >
-              <ion-text color="danger">
-                Designation should be at least 2 characters.</ion-text
-              >
-            </span>
-<div class="ion-margin-top ion-text-start terms-conditions">
-      <p>
-        By signing up, you agree to our
-        <ion-text color="danger"><a href="www.kingdavid.engineer">Terms & Conditions</a></ion-text>.
-      </p>
-    </div>
+        <ion-item lines="none">
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input
+            formControlName="email"
+            required="true"
+            placeholder="Email: "
+            type="email"
+          ></ion-input>
+        </ion-item>
+        <span
+          class="error"
+          *ngIf="this.addNewEmployeeForm.get('email').invalid && this.addNewEmployeeForm.get('email').dirty "
+          slot="none"
+        >
+          <ion-text color="danger">
+            Please enter a valid email accordingly.</ion-text
+          >
+        </span>
 
-    <div class="bottom-section">
-      <ion-button
-       [disabled]="!this.addNewEmployeeForm.valid  "
-      expand="block" type="submit">SIGN UP</ion-button>
-    </div>
+        <ion-item lines="none">
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-input
+            formControlName="phone"
+            required="true"
+            minlength="10"
+            maxlength="10"
+            placeholder="Phone Number: "
+            type="number"
+          ></ion-input>
+        </ion-item>
+        <span
+          class="error"
+          *ngIf="this.addNewEmployeeForm.get('phone').invalid && this.addNewEmployeeForm.get('phone').dirty "
+          slot="none"
+        >
+          <ion-text color="danger">
+            Please enter a correct phone number.</ion-text
+          >
+        </span>
 
-          </ion-card-content>
-        </form>
-      </ion-card>
-    </div>
-  </div>
+        <ion-item lines="none">
+          <ion-icon name="person-add-outline"></ion-icon>
+          <ion-input
+            formControlName="designation"
+            required="true"
+            placeholder="Designation: "
+            type="text"
+          ></ion-input>
+        </ion-item>
+        <span
+          class=""
+          *ngIf="this.addNewEmployeeForm.get('designation').invalid && this.addNewEmployeeForm.get('designation').dirty "
+          slot="none"
+        >
+          <ion-text color="danger">
+            Designation should be at least 2 characters.</ion-text
+          >
+        </span>
+        <div class="ion-margin-top ion-text-start terms-conditions">
+          <p>
+            By signing up, you agree to our <span>Terms & Conditions.</span>
+          </p>
+        </div>
+
+
+          <ion-button color="warning"
+            [disabled]="!this.addNewEmployeeForm.valid  "
+          expand="block" type="submit">Submit</ion-button>
+
+      </ion-card-content>
+    </form>
+  </ion-card>
 </ion-content>
